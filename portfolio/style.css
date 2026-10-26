@@ -1,0 +1,597 @@
+/* ==================================================
+   1. Base: tipografia, cores e box model
+   Paleta: fundo #11131c, painéis #1a1d2b,
+   texto #f3f0fa, texto secundário #bbb7cc,
+   destaque lilás #c0a7ff.
+   ================================================== */
+
+/* O padding e a border passam a fazer parte da largura definida. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #11131c;
+    color: #e5e1f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.container {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1, h2, h3 {
+    color: #f3f0fa;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-bottom: 18px;
+    font-size: 27px;
+    letter-spacing: -0.7px;
+}
+
+h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+a {
+    color: #c0a7ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f3f0fa;
+    text-decoration: underline;
+}
+
+/* O foco permite ver qual o elemento selecionado com a tecla Tab. */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid #c0a7ff;
+    outline-offset: 4px;
+}
+
+.muted, .small-note {
+    color: #bbb7cc;
+}
+
+.small-note {
+    margin: 20px 0 0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.eyebrow, .link-category, .image-caption {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    letter-spacing: 1.1px;
+}
+
+.eyebrow {
+    margin-bottom: 16px;
+    color: #c0a7ff;
+    text-transform: uppercase;
+}
+
+/* ==================================================
+   2. Cabeçalho e navegação
+   ================================================== */
+
+.site-header {
+    padding: 20px 0;
+    background-color: #1a1d2b;
+    border-bottom: 1px solid #34354a;
+}
+
+.header-content, .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    flex-direction: column;
+    gap: 14px;
+}
+
+.brand {
+    color: #f3f0fa;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.brand span, h1 span, .footer-dot {
+    color: #c0a7ff;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 12px;
+    border-bottom: 2px solid transparent;
+    border-radius: 6px;
+    color: #d7d2e6;
+    font-size: 14px;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    background-color: #2b2540;
+    border-bottom-color: #c0a7ff;
+    color: #e1d4ff;
+    text-decoration: none;
+}
+
+/* ==================================================
+   3. Sobre mim e imagem
+   ================================================== */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    padding: 52px 0;
+}
+
+.hero-text, .hero-image {
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    letter-spacing: -2.5px;
+}
+
+.hero-subtitle {
+    margin-bottom: 22px;
+    font-size: 25px;
+    line-height: 1.35;
+    color: #ded7ef;
+}
+
+.intro {
+    max-width: 490px;
+    color: #bbb7cc;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #5c4786;
+    border-radius: 18px;
+}
+
+.image-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 14px 0 0;
+    color: #bbb7cc;
+    font-size: 10px;
+}
+
+/* ==================================================
+   4. Botões e ligações de destaque
+   ================================================== */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 20px;
+    border: 1px solid #c0a7ff;
+    border-radius: 8px;
+    background-color: #c0a7ff;
+    color: #191223;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.button span {
+    margin-left: 14px;
+}
+
+.button:hover {
+    background-color: #d6c5ff;
+    border-color: #d6c5ff;
+    color: #191223;
+    text-decoration: none;
+}
+
+.text-link {
+    font-size: 14px;
+}
+
+/* ==================================================
+   5. Secções, hobbies e tarefas: grelhas com Flexbox
+   ================================================== */
+
+.panel {
+    margin-bottom: 24px;
+    padding: 28px;
+    border: 1px solid #34354a;
+    border-radius: 14px;
+    background-color: #1a1d2b;
+    color: #f3f0fa;
+}
+
+.personal-grid, .links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.personal-card, .link-card {
+    width: 100%;
+}
+
+.hobby-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hobby-list li {
+    padding: 8px 12px;
+    border: 1px solid #514267;
+    border-radius: 6px;
+    background-color: #2b2540;
+    color: #e1d4ff;
+    font-size: 14px;
+}
+
+.task-list {
+    margin: 20px 0 0;
+    padding-left: 25px;
+}
+
+.task-list li {
+    padding: 5px 0 5px 8px;
+    color: #ded7ef;
+}
+
+/* ==================================================
+   6. Links favoritos
+   ================================================== */
+
+.section-intro {
+    margin-bottom: 26px;
+}
+
+.link-card {
+    margin-bottom: 16px;
+    padding: 22px;
+    border: 1px solid #34354a;
+    border-radius: 10px;
+    background-color: #141722;
+}
+
+.link-category {
+    margin-bottom: 22px;
+    color: #bbb7cc;
+    text-transform: uppercase;
+}
+
+.link-card h3 a {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: #e1d4ff;
+}
+
+.link-card p:last-child {
+    margin-bottom: 0;
+    color: #bbb7cc;
+    font-size: 14px;
+}
+
+/* ==================================================
+   7. Tabela do horário
+   ================================================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 15px;
+}
+
+th, td {
+    padding: 16px;
+    border: 1px solid #414258;
+}
+
+thead th {
+    background-color: #c0a7ff;
+    color: #191223;
+    font-weight: bold;
+}
+
+tbody th {
+    font-weight: normal;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #242737;
+}
+
+/* ==================================================
+   8. Contacto e formulário
+   ================================================== */
+
+.contact-layout, .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.contact-text, form, .form-field {
+    width: 100%;
+}
+
+.email-link {
+    display: inline-block;
+    padding: 6px 0;
+    border-bottom: 1px solid #675086;
+    font-weight: bold;
+}
+
+.form-row {
+    gap: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+label span {
+    color: #bbb7cc;
+    font-size: 11px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 13px 14px;
+    border: 1px solid #70718b;
+    border-radius: 8px;
+    background-color: #11131c;
+    color: #f3f0fa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+textarea {
+    display: block;
+    resize: vertical;
+}
+
+/* ==================================================
+   9. Pseudo-elementos: decoração dos títulos e campos
+   ================================================== */
+
+/* Cria uma pequena linha decorativa depois de cada título h2. */
+h2::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 3px;
+    margin-top: 16px;
+    border-radius: 2px;
+    background-color: #c0a7ff;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #a7a3b9;
+}
+
+::selection {
+    background-color: #c0a7ff;
+    color: #191223;
+}
+
+/* ==================================================
+   10. Rodapé e página de confirmação
+   ================================================== */
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 0 32px;
+    color: #bbb7cc;
+    font-size: 13px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.confirmation {
+    max-width: 680px;
+    margin: 70px auto;
+}
+
+.confirmation h1 {
+    font-size: 42px;
+}
+
+.confirmation .button {
+    margin-top: 24px;
+}
+
+/* ==================================================
+   11. Responsividade: três intervalos explícitos
+   Mobile: até 599px | Tablet: 600-991px
+   Desktop: a partir de 992px
+   ================================================== */
+
+/* MOBILE: uma coluna, menu que quebra em várias linhas. */
+@media (max-width: 599px) {
+    .container {
+        width: 92%;
+    }
+
+    .panel {
+        padding: 22px 18px;
+    }
+
+    .hero {
+        padding: 38px 0;
+    }
+
+    h1 {
+        font-size: 44px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .nav-links a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 12px 7px;
+        font-size: 12px;
+    }
+
+    .link-card {
+        padding: 20px;
+    }
+}
+
+/* TABLET: duas colunas nos interesses e nos links. */
+@media (min-width: 600px) and (max-width: 991px) {
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .hero-text {
+        width: 55%;
+    }
+
+    .hero-image {
+        width: 40%;
+    }
+
+    h1 {
+        font-size: 54px;
+    }
+
+    .personal-card, .link-card {
+        width: 48%;
+    }
+
+    .form-row {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-field {
+        width: 48%;
+    }
+}
+
+/* DESKTOP: navegação horizontal e três colunas nos links. */
+@media (min-width: 992px) {
+    .header-content, .hero, .contact-layout, .form-row, .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero {
+        padding: 72px 0;
+    }
+
+    .hero-text {
+        width: 54%;
+    }
+
+    .hero-image {
+        width: 39%;
+    }
+
+    h1 {
+        font-size: 80px;
+        letter-spacing: -4px;
+    }
+
+    .hero-subtitle {
+        font-size: 30px;
+    }
+
+    .panel {
+        padding: 34px;
+    }
+
+    .personal-card, .form-field {
+        width: 48%;
+    }
+
+    .link-card {
+        width: 31.5%;
+        margin-bottom: 0;
+    }
+
+    .contact-text {
+        width: 37%;
+    }
+
+    form {
+        width: 57%;
+    }
+
+    .site-footer {
+        align-items: center;
+    }
+}
