@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página pessoal de João Sousa: sobre mim, hobbies, tarefas e horário.">
+    <title>João Sousa | Página pessoal</title>
+    <link rel="icon" href="images/portfolio.png" type="image/png">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#aboutMe" aria-label="João Sousa - início">JS<span>.</span></a>
+            <nav aria-label="Navegação principal">
+                <ul class="nav-links">
+                    <li><a href="#aboutMe">Sobre mim</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#tasks">Tarefas</a></li>
+                    <li><a href="#favoriteLinks">Links favoritos</a></li>
+                    <li><a href="#schedule">Horário</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Sobre mim: texto e imagem organizados com Flexbox. -->
+        <section id="aboutMe" class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Olá, bem-vindo à minha página</p>
+                <h1>João Sousa<span>.</span></h1>
+                <p class="hero-subtitle">Entre código, música<br>e novas ideias.</p>
+                <p class="intro">Sou estudante de Desenvolvimento para Dispositivos Móveis no ISTEC Porto.
+                    Gosto de criar jogos, explorar a produção musical e aprender a construir as minhas próprias ideias.</p>
+                <div class="hero-actions">
+                    <a class="button" href="#contact">Vamos conversar <span aria-hidden="true">↗</span></a>
+                    <a class="text-link" href="#hobbies">Mais sobre mim <span aria-hidden="true">↓</span></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- O caminho relativo permite abrir a página em qualquer pasta. -->
+                <img src="images/me.png" width="638" height="480"
+                    alt="Ilustração de um portátil com código e uma bebida, em tons roxos.">
+                <p class="image-caption"><span>CRIAR. EXPERIMENTAR. APRENDER.</span><span aria-hidden="true">&lt;/&gt;</span></p>
+            </div>
+        </section>
+
+        <!-- Duas secções que passam para a mesma linha em ecrãs maiores. -->
+        <div class="personal-grid">
+            <section id="hobbies" class="panel personal-card">
+                <p class="eyebrow">01 / Interesses</p>
+                <h2>Os meus hobbies</h2>
+                <p class="muted">O que gosto de fazer para além das aulas.</p>
+                <ul class="hobby-list">
+                    <li>Desenvolvimento de jogos</li>
+                    <li>Produção musical</li>
+                    <li>Ginásio</li>
+                    <li>MMA</li>
+                </ul>
+            </section>
+
+            <section id="tasks" class="panel personal-card">
+                <p class="eyebrow">02 / Próximos passos</p>
+                <h2>As minhas tarefas</h2>
+                <p class="muted">Pequenos passos para continuar a evoluir.</p>
+                <ol class="task-list">
+                    <li>Estudar</li>
+                    <li>Organizar o GitHub</li>
+                    <li>Organizar o LinkedIn</li>
+                </ol>
+            </section>
+        </div>
+
+        <section id="favoriteLinks" class="panel">
+            <p class="eyebrow">03 / Descobrir</p>
+            <h2>Os meus links favoritos</h2>
+            <p class="muted section-intro">Para esclarecer dúvidas, explorar comunidades e encontrar a banda sonora do dia.</p>
+            <div class="links-grid">
+                <article class="link-card">
+                    <p class="link-category">Programação</p>
+                    <h3><a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer">Stack Overflow
+                        <span aria-hidden="true">↗</span></a></h3>
+                    <p>Perguntas e respostas sobre programação e desenvolvimento de software.</p>
+                </article>
+                <article class="link-card">
+                    <p class="link-category">Comunidade</p>
+                    <h3><a href="https://reddit.com" target="_blank" rel="noopener noreferrer">Reddit
+                        <span aria-hidden="true">↗</span></a></h3>
+                    <p>Comunidades e conversas sobre tecnologia, jogos e muitos outros interesses.</p>
+                </article>
+                <article class="link-card">
+                    <p class="link-category">Música</p>
+                    <h3><a href="https://music.youtube.com" target="_blank" rel="noopener noreferrer">YouTube Music
+                        <span aria-hidden="true">↗</span></a></h3>
+                    <p>Música para acompanhar o estudo, descobrir artistas e procurar inspiração.</p>
+                </article>
+            </div>
+            <p class="small-note">Os links abrem num novo separador.</p>
+        </section>
+
+        <section id="schedule" class="panel">
+            <p class="eyebrow">04 / Organização</p>
+            <h2>O meu horário</h2>
+            <p class="muted section-intro">A minha semana, de segunda a sexta-feira.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Dia</th>
+                        <th scope="col">Horário</th>
+                        <th scope="col">Disciplina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Segunda-feira</th>
+                        <td>8:00 - 17:00</td>
+                        <td>Matemática</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Terça-feira</th>
+                        <td>8:00 - 17:00</td>
+                        <td>Programação</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Quarta-feira</th>
+                        <td>8:00 - 17:00</td>
+                        <td>Bases de Dados</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Quinta-feira</th>
+                        <td>8:00 - 17:00</td>
+                        <td>Game Development</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Sexta-feira</th>
+                        <td>8:00 - 17:00</td>
+                        <td>Marketing Digital</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact" class="panel contact-layout">
+            <div class="contact-text">
+                <p class="eyebrow">05 / Contacto</p>
+                <h2>Vamos conversar?</h2>
+                <p class="muted">Tens uma ideia, uma pergunta ou um projeto em mente? Podes contactar-me por email.</p>
+                <a class="email-link" href="mailto:jsousa.tec@gmail.com">jsousa.tec@gmail.com</a>
+                <p class="small-note" id="form-note">O formulário é uma demonstração para a aula.
+                    O botão abre uma página de confirmação, mas não envia a mensagem. Para me contactares, utiliza o email.</p>
+            </div>
+
+            <!-- Sem servidor: o submit abre apenas uma página local de demonstração. -->
+            <form action="confirmacao.html" method="get" aria-describedby="form-note">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name">Nome <span>(obrigatório)</span></label>
+                        <input type="text" id="name" name="nome" placeholder="O teu nome" autocomplete="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email <span>(obrigatório)</span></label>
+                        <input type="email" id="email" name="email" placeholder="nome@exemplo.pt" autocomplete="email" required>
+                    </div>
+                </div>
+                <label for="message">Mensagem <span>(obrigatório)</span></label>
+                <textarea id="message" name="mensagem" rows="5" placeholder="O que tens em mente?" required></textarea>
+                <button class="button" type="submit">Testar envio <span aria-hidden="true">↗</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>João Sousa<span class="footer-dot">.</span></p>
+        <p>Página pessoal · Programação Web</p>
+        <a href="#aboutMe">Voltar ao início <span aria-hidden="true">↑</span></a>
+    </footer>
+</body>
+
+</html>
